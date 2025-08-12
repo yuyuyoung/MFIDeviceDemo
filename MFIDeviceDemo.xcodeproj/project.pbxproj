@@ -6,8 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		500C61007D3FA6B34D8F51D0 /* Pods_MFIDeviceDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18877448C2FAD778B28CF974 /* Pods_MFIDeviceDemo.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		18877448C2FAD778B28CF974 /* Pods_MFIDeviceDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MFIDeviceDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		275021D82E4B564F00E33907 /* MFIDeviceDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MFIDeviceDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F89F03F1C9272BC545B732B /* Pods-MFIDeviceDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MFIDeviceDemo.debug.xcconfig"; path = "Target Support Files/Pods-MFIDeviceDemo/Pods-MFIDeviceDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		8A650795B01995E0A0AB28FE /* Pods-MFIDeviceDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MFIDeviceDemo.release.xcconfig"; path = "Target Support Files/Pods-MFIDeviceDemo/Pods-MFIDeviceDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -36,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				500C61007D3FA6B34D8F51D0 /* Pods_MFIDeviceDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +55,8 @@
 			children = (
 				275021DA2E4B564F00E33907 /* MFIDeviceDemo */,
 				275021D92E4B564F00E33907 /* Products */,
+				EAD4A288988B321D2648CE12 /* Pods */,
+				B626CA308B469709D7232B71 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +68,24 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		B626CA308B469709D7232B71 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				18877448C2FAD778B28CF974 /* Pods_MFIDeviceDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EAD4A288988B321D2648CE12 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2F89F03F1C9272BC545B732B /* Pods-MFIDeviceDemo.debug.xcconfig */,
+				8A650795B01995E0A0AB28FE /* Pods-MFIDeviceDemo.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -65,9 +93,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 275021F02E4B565100E33907 /* Build configuration list for PBXNativeTarget "MFIDeviceDemo" */;
 			buildPhases = (
+				CD8F49C86C4AA449071B60CD /* [CP] Check Pods Manifest.lock */,
 				275021D42E4B564F00E33907 /* Sources */,
 				275021D52E4B564F00E33907 /* Frameworks */,
 				275021D62E4B564F00E33907 /* Resources */,
+				9E5C79FD6B4124ECB5B5E9E6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -77,8 +107,6 @@
 				275021DA2E4B564F00E33907 /* MFIDeviceDemo */,
 			);
 			name = MFIDeviceDemo;
-			packageProductDependencies = (
-			);
 			productName = MFIDeviceDemo;
 			productReference = 275021D82E4B564F00E33907 /* MFIDeviceDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -126,6 +154,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9E5C79FD6B4124ECB5B5E9E6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MFIDeviceDemo/Pods-MFIDeviceDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MFIDeviceDemo/Pods-MFIDeviceDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MFIDeviceDemo/Pods-MFIDeviceDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD8F49C86C4AA449071B60CD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MFIDeviceDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		275021D42E4B564F00E33907 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -139,6 +209,7 @@
 /* Begin XCBuildConfiguration section */
 		275021F12E4B565100E33907 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F89F03F1C9272BC545B732B /* Pods-MFIDeviceDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -166,6 +237,7 @@
 		};
 		275021F22E4B565100E33907 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A650795B01995E0A0AB28FE /* Pods-MFIDeviceDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
