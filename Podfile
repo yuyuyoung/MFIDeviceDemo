@@ -7,6 +7,4 @@ target 'MFIDeviceDemo' do
 
   # Pods for MFIDeviceDemo
 
-  pod 'Masonry','1.1.0'
-
 end

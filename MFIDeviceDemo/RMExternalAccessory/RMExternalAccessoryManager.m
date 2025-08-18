@@ -79,22 +79,21 @@ static RMExternalAccessoryManager * _instance = nil;
 
 - (void)_readData {
     #define EAD_INPUT_BUFFER_SIZE 128
-    uint8_t buf[EAD_INPUT_BUFFER_SIZE];
+//    uint8_t buf[EAD_INPUT_BUFFER_SIZE];
     uint8_t buf2[EAD_INPUT_BUFFER_SIZE];
     
-    NSLog(@">>>>>>>>>>read data from input stream");
-    while ([[_eap_session inputStream] hasBytesAvailable])
-    {
-        NSInteger bytesRead = [[_eap_session inputStream] read:buf maxLength:EAD_INPUT_BUFFER_SIZE];
-        if (_readData == nil) {
-            _readData = [[NSMutableData alloc] init];
-        }
-        [_readData appendBytes:(void *)buf length:bytesRead];
-        NSLog(@"read %ld bytes from input stream", (long)bytesRead);
-    }
-
-    NSString *eap_string = [[NSString alloc] initWithData:_readData encoding:NSASCIIStringEncoding];
-    
+//    while ([[_eap_session inputStream] hasBytesAvailable])
+//    {
+//        NSInteger bytesRead = [[_eap_session inputStream] read:buf maxLength:EAD_INPUT_BUFFER_SIZE];
+//        if (_readData == nil) {
+//            _readData = [[NSMutableData alloc] init];
+//        }
+//        [_readData appendBytes:(void *)buf length:bytesRead];
+//        NSLog(@"read %ld bytes from eap_session input stream", (long)bytesRead);
+//    }
+//
+//    NSString *eap_string = [[NSString alloc] initWithData:_readData encoding:NSASCIIStringEncoding];
+//    
     
     _readData = nil;
     while ([[_nav_session inputStream] hasBytesAvailable])
@@ -104,15 +103,15 @@ static RMExternalAccessoryManager * _instance = nil;
             _readData = [[NSMutableData alloc] init];
         }
         [_readData appendBytes:(void *)buf2 length:bytesRead];
-        NSLog(@"read %ld bytes from input stream", (long)bytesRead);
+        NSLog(@"read %ld bytes from nav_session input stream", (long)bytesRead);
     }
 
     NSString *nav_string = [[NSString alloc] initWithData:_readData encoding:NSASCIIStringEncoding];
     
     
-    NSString *str = [NSString stringWithFormat:@"接收到数据eap_data: %@, nav_data: %@", eap_string, nav_string];
-    NSLog(@"接收到数据eap_data%@", str);
-    [RMCurrentVC.view rm_showToastCenter:str];
+    NSString *str = [NSString stringWithFormat:@"nav_data: %@", nav_string];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"kExternalAccessoryDataKey" object:nav_string];
+    NSLog(@"接收到数据%@", str);
 }
 
 - (void)dealloc
@@ -238,7 +237,6 @@ static RMExternalAccessoryManager * _instance = nil;
 {
     return [_readData length];
 }
-
 
 #pragma mark - EAAccessoryDelegate
 

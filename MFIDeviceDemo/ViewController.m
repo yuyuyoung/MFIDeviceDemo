@@ -8,6 +8,8 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *orgDataLabel;
+@property (weak, nonatomic) IBOutlet UILabel *resultDataLabel;
 
 @end
 
@@ -18,5 +20,9 @@
     // Do any additional setup after loading the view.
 }
 
+- (IBAction)sendMessageToDevice:(UIButton *)sender {
+    
+    
+}
 
 @end
